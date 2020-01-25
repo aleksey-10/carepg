@@ -1,0 +1,113 @@
+@mixin set-anim-btn ($col: blue, $rvr: white) {
+	position: relative;
+	z-index: 0;
+
+	&:before {
+		visibility: hidden;
+		content: '';
+		opacity: 0.5;
+		position: absolute;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+		width: 1px; height: 100%;
+		margin: 0;
+		z-index: 0;
+		background-color: transparent;
+		-webkit-box-shadow: 0px 0px 40px 14px rgba(255,255,255,0.8); 
+		box-shadow: 0px 0px 40px 14px rgba(255,255,255,0.8);
+	}
+
+	&:hover {
+		background: $col; color: $rvr;
+		&:before {	visibility: visible; margin-left: 100%; transition: ease all 0.5s;}
+	}
+}
+
+@mixin set-anim-btn-sec($col: blue, $b-rad: 0) {
+	position: relative;
+	border-radius: $b-rad;
+	z-index: 0;
+
+	&:before {
+		position: absolute;
+		content: '';
+		border-radius: $b-rad;
+		width: 0; height: 100%;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+		margin: auto 0;
+		background: $col;
+		transition: width 0.25s;
+		z-index: -1;
+	}
+
+	&:hover {
+		box-shadow: none;
+		&:before {
+			width: 100%;
+			transition: width 0.25s;
+		}
+	}
+}
+
+@mixin bounce() {
+	
+	&:hover {
+		animation: bounce 0.5s;
+	}
+
+	@keyframes bounce {
+		0%, 20%, 60%, 100% {
+			transform: translateY(0);
+			transform: translateY(0);
+		}
+
+		40% {
+			transform: translateY(-20px);
+			transform: translateY(-20px);
+		}
+
+		80% {
+			transform: translateY(-10px);
+			transform: translateY(-10px);
+		}
+	}
+}
+
+@mixin set-bg-bw($clr) {
+	position: relative;
+	z-index: 0;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+		width: 100%; height: 100%;
+		margin: auto 0;
+		background-color: rgba(0, 0, 0, 0.2);
+		z-index: -1;
+	}
+}
+
+@mixin clear-anim() {
+	text-decoration: none;
+	border: none;
+	background: none;
+
+	&:before {
+		text-decoration: none;
+		border: none;
+		background: none;
+		box-shadow: none;
+	}
+
+	&:hover { background: none; }
+}
+
+@mixin carousel() {
+	display: flex;
+	width: 100000vw; 
+	margin-left: 0;
+	transition: margin 0.5s;
+}

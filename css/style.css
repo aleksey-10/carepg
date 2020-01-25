@@ -1,0 +1,406 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  color: black;
+  font-size: 16px; }
+
+a {
+  text-decoration: none;
+  color: gray; }
+
+[hidden] {
+  display: none !important; }
+
+article h3 {
+  font-size: 2em;
+  padding: 10px; }
+
+article p {
+  color: #666666;
+  padding: 10px; }
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin: 40px; }
+  header #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: default;
+    letter-spacing: 5px; }
+    header #logo h3 {
+      display: inline-block;
+      font-size: 2em;
+      -ms-flex-item-align: end;
+      align-self: flex-end;
+      color: #666666; }
+    header #logo i {
+      color: #ffb31c;
+      padding-left: 10px;
+      font-size: 3em; }
+  header #nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    color: gray; }
+    header #nav ul a {
+      position: relative;
+      z-index: 0;
+      padding: 10px 20px 10px 20px;
+      border-radius: 30px; }
+      header #nav ul a:before {
+        visibility: hidden;
+        content: '';
+        opacity: 0.5;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        height: 100%;
+        margin: 0;
+        z-index: 0;
+        background-color: transparent;
+        -webkit-box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8); }
+      header #nav ul a:hover {
+        background: #99DDFF;
+        color: white; }
+        header #nav ul a:hover:before {
+          visibility: visible;
+          margin-left: 100%;
+          -webkit-transition: ease all 0.5s;
+          -o-transition: ease all 0.5s;
+          transition: ease all 0.5s; }
+  header #nav #xBtn {
+    display: none; }
+  header #navIcon {
+    display: none; }
+  header #login span {
+    background: #ffb31c;
+    position: relative;
+    z-index: 0;
+    padding: 10px 40px 10px 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 30px; }
+    header #login span:before {
+      visibility: hidden;
+      content: '';
+      opacity: 0.5;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      margin: 0;
+      z-index: 0;
+      background-color: transparent;
+      -webkit-box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8); }
+    header #login span:hover {
+      background: #ffb31c;
+      color: white; }
+      header #login span:hover:before {
+        visibility: visible;
+        margin-left: 100%;
+        -webkit-transition: ease all 0.5s;
+        -o-transition: ease all 0.5s;
+        transition: ease all 0.5s; }
+  header #login i {
+    display: none; }
+
+main #carousel {
+  position: relative;
+  overflow-x: hidden; }
+  main #carousel .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100000vw;
+    margin-left: 0;
+    -webkit-transition: margin 0.5s;
+    -o-transition: margin 0.5s;
+    transition: margin 0.5s;
+    color: white;
+    position: relative;
+    z-index: 0; }
+    main #carousel .container:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      margin: auto 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: -1; }
+    main #carousel .container > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 100px 0;
+      text-align: center;
+      width: 100vw;
+      height: 100%;
+      background-size: cover;
+      background-position: center, center; }
+      main #carousel .container > div h1 {
+        font-size: 3em; }
+      main #carousel .container > div a {
+        display: inline-block;
+        color: white;
+        background-color: #ffb31c;
+        border-radius: 30px;
+        padding: 20px 40px;
+        margin: 50px auto;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.25em; }
+        main #carousel .container > div a:hover {
+          -webkit-animation: bounce 0.5s;
+          animation: bounce 0.5s; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+    transform: translateY(-10px); } }
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+    transform: translateY(-10px); } }
+  main #carousel .arw {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 2em;
+    color: white; }
+    main #carousel .arw i {
+      padding: 10px;
+      cursor: pointer; }
+      main #carousel .arw i:hover {
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        -webkit-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s; }
+  main #carousel [data-item='1'] {
+    background-image: url("https://www.itl.cat/pngfile/big/33-332476_new-york-buildings-wallpapers-hd-free-482218-new.jpg"); }
+  main #carousel [data-item='2'] {
+    background-image: url("https://images.wallpaperscraft.ru/image/gorod_kurort_more_135956_1920x1080.jpg"); }
+
+main #work {
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center; }
+  main #work h3 {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px; }
+  main #work article {
+    margin: 100px; }
+  main #work .fa-chart-line {
+    font-size: 3em;
+    color: #ffb31c; }
+  main #work .feature {
+    overflow-x: hidden;
+    margin-bottom: 100px;
+    margin: 0; }
+    main #work .feature .feature-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      cursor: pointer;
+      border-bottom: 1px solid lightgray; }
+      main #work .feature .feature-nav > div {
+        padding: 25px; }
+      main #work .feature .feature-nav span {
+        padding: 10px; }
+      main #work .feature .feature-nav .number {
+        background: #666666;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%; }
+      main #work .feature .feature-nav .selected-number .number, main #work .feature .feature-nav > div:hover .number {
+        background: #ffb31c; }
+    main #work .feature .feature-describe {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100000vw;
+      margin-left: 0;
+      -webkit-transition: margin 0.5s;
+      -o-transition: margin 0.5s;
+      transition: margin 0.5s; }
+      main #work .feature .feature-describe > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 10px 0; }
+        main #work .feature .feature-describe > div p {
+          padding: 10px; }
+      main #work .feature .feature-describe .image {
+        font-size: 5em;
+        color: #99DDFF; }
+      main #work .feature .feature-describe .describe {
+        max-width: 600px;
+        text-align: justify; }
+
+@media screen and (max-width: 1200px) {
+  header #logo {
+    letter-spacing: 0; }
+    header #logo h3 {
+      display: none; }
+  header #nav {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: -100%;
+    margin: auto 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(75, 73, 82, 0.95);
+    -webkit-transition: right 0.25s;
+    -o-transition: right 0.25s;
+    transition: right 0.25s; }
+    header #nav ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      padding: 0 30px; }
+      header #nav ul a {
+        display: inline-block;
+        text-decoration: none;
+        border: none;
+        background: none;
+        color: white;
+        font-weight: bold;
+        padding: 20px 0;
+        margin-top: 10px;
+        width: 100%;
+        border-bottom: 1px solid white;
+        border-radius: 0; }
+        header #nav ul a:before {
+          text-decoration: none;
+          border: none;
+          background: none;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+        header #nav ul a:hover {
+          background: none; }
+    header #nav #xBtn {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: white;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      margin: 20px;
+      width: auto; }
+  header .show-menu {
+    display: block !important; }
+  header #navIcon {
+    display: inline-block; }
+  header #login span {
+    display: none; }
+  header #login i {
+    display: inline-block;
+    border: 4px solid silver;
+    border-radius: 50%;
+    padding: 10px; }
+  header i {
+    font-size: 1.4em;
+    cursor: pointer;
+    color: silver; } }
+
+@media screen and (max-width: 900px) {
+  main #carousel .container > div {
+    padding: 50px 0 50px 0; }
+  main #work article {
+    margin: 50px 0; }
+  main #work .feature {
+    margin: 50px 0; }
+    main #work .feature .feature-nav {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      main #work .feature .feature-nav > div:nth-child(1) {
+        padding-left: 10%; }
+      main #work .feature .feature-nav > div:nth-child(2) {
+        padding-left: 30%; }
+      main #work .feature .feature-nav > div:nth-child(3) {
+        padding-left: 50%; }
+    main #work .feature .feature-describe > div {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }

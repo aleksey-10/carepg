@@ -1,0 +1,237 @@
+@import 'default';
+@import 'mixins';
+
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-transform: uppercase;
+	margin: $pad*4;
+	
+	#logo {
+		display: flex;
+		cursor: default;
+		letter-spacing: 5px;
+		h3 { display: inline-block; font-size: 2em; align-self: flex-end; color: $lg-col;}
+		i { color: $bg-col; padding-left: $pad; font-size: 3em; }
+	}
+
+	#nav {
+		ul { 
+			display: flex; text-decoration: none; 
+			list-style: none; color: $sec-col;
+
+			a { 
+				@include set-anim-btn($bg-sec-col);
+				padding: $pad $pad*2 $pad $pad*2;
+				border-radius: 30px;
+			}
+		}
+
+		#xBtn { display: none; }
+	}
+
+	#navIcon { display: none; }
+
+	#login {
+		span { 
+			background: $bg-col; 
+			@include set-anim-btn($bg-col);
+			padding: $pad $pad*4 $pad $pad*4;
+			cursor: pointer;
+			color: $rvr-col;
+			border-radius: 30px;
+		}
+		i { display: none; } 
+	}
+}
+
+main {
+	#carousel {
+		position: relative;
+		overflow-x: hidden;
+		// .active { margin-left: 50%; };
+		.container {
+			@include carousel();
+			
+			color: $rvr-col;
+	 		@include set-bg-bw($prim-col);
+	 		
+
+	 		> div {
+	 			display: flex; flex-direction: column; justify-content: center;
+	 			padding: $pad*10 0;
+				text-align: center; 
+				width: 100vw; height: 100%;
+
+				background-size: cover;
+				background-position: center, center;
+				
+				h1 { font-size: 3em; }
+
+				a { 
+					display: inline-block;				
+					color: $rvr-col; background-color: $bg-col; 
+					border-radius: $pad*3;
+					padding: $pad*2 $pad*4; 
+					margin: $pad*5 auto;
+					font-weight: bold; text-transform: uppercase; font-size: 1.25em; 
+					
+					@include bounce();
+				}
+	 		}
+		}
+
+		.arw {
+	 		position: absolute;
+	 		bottom: 30px; right: 30px;
+	 		font-size: 2em;
+	 		color: $rvr-col;
+	 		i { 
+	 			padding: $pad; cursor: pointer; 
+				&:hover { transform: scale(1.3); transition: all 0.25s; }
+	 		}
+	 	}
+	
+		[data-item='1'] {
+			background-image: url('https://www.itl.cat/pngfile/big/33-332476_new-york-buildings-wallpapers-hd-free-482218-new.jpg');
+		}
+		
+		[data-item='2'] {
+			background-image: url('https://images.wallpaperscraft.ru/image/gorod_kurort_more_135956_1920x1080.jpg'); 
+		}
+	}
+
+	#work {
+		display: block;
+ 
+		max-width: $max-w; margin: auto;
+		text-align: center;
+		h3 { max-width: 600px; margin: auto; padding: $pad*3 }
+		article { margin: 100px; }
+		.fa-chart-line { font-size: 3em; color: $bg-col;  }
+		
+		.feature {
+			overflow-x: hidden;
+			margin-bottom: 100px;
+			margin: 0;
+
+			.feature-nav { 
+				display: flex; justify-content: space-between;
+				cursor: pointer;
+				border-bottom: 1px solid lightgray;
+
+				> div { padding: 25px; }
+				span { padding: $pad; }
+				.number { 
+					background: $lg-col; color: $rvr-col;
+					padding: $pad $pad*1.5; border-radius: 50%; 
+				}
+				
+
+				.selected-number, > div:hover {
+					.number { background: $bg-col; }
+				}
+			}
+
+			.feature-describe {
+				@include carousel();
+
+
+				> div {
+					display: flex; justify-content: space-around; align-items: center;
+					padding: $pad 0;
+					p { padding: $pad; }
+				}
+
+				.image { font-size: 5em; color: $bg-sec-col;}
+				.describe { 
+					max-width: 600px; text-align: justify; 
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	header {
+		#logo {	
+			letter-spacing: 0; 	
+			h3 { display: none; }
+		}
+
+		#nav { 
+			display: none;
+			position: absolute; z-index: 1; right: -100%; margin: auto 0;
+			top: 0; 
+			height: 100%; width: 300px;
+			background-color: rgba(75,73,82,0.95);
+			transition: right 0.25s;
+
+			ul { 
+				display: flex; flex-direction: column; justify-content: space-around;
+				padding: 0 $pad*3;
+
+				li {}
+				a { 
+					display: inline-block; 
+					@include clear-anim();
+					color: $rvr-col; font-weight: bold;
+					padding: $pad*2 0;
+					margin-top: $pad;
+					width: 100%;
+					border-bottom: 1px solid $rvr-col; border-radius: 0;
+				}
+			}
+
+			#xBtn {
+				display: flex;
+				color: $rvr-col; 
+				justify-content: flex-end; margin: $pad*2;
+				width: auto;
+
+			}
+
+		}
+
+		.show-menu { display: block !important; }
+		
+		#navIcon  { display: inline-block; }
+
+		#login {
+			span { display: none; }
+			i { display: inline-block; border: 4px solid silver; border-radius: 50%; padding: $pad; }
+		}
+
+		i { font-size: 1.4em; cursor: pointer; color: silver; }
+	}
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		#carousel { 
+			.container >div { padding: $pad*5 0 $pad*5 0; }
+		}
+
+		#work {
+			article { margin: 50px 0; }
+			
+			.feature {
+				margin: 50px 0; 
+
+				.feature-nav { 
+					flex-direction: column; align-items: flex-start; 
+					> div {   
+						&:nth-child(1) { padding-left: 10%; }
+						&:nth-child(2) { padding-left: 30%; }
+						&:nth-child(3) { padding-left: 50%; }
+					}
+				}
+
+				.feature-describe {
+					> div { flex-direction: column; }
+				}
+			}
+		}
+	}
+}
