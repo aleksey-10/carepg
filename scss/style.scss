@@ -34,15 +34,12 @@ header {
 	#navIcon { display: none; }
 
 	#login {
-		span { 
-			background: $bg-col; 
-			@include set-anim-btn($bg-col);
-			padding: $pad $pad*4 $pad $pad*4;
-			cursor: pointer;
-			color: $rvr-col;
-			border-radius: 30px;
-		}
-		i { display: none; } 
+		
+	}
+
+	.btn { 
+		font-size: 1.7em; font-weight: bold;
+		cursor: pointer; color: silver;
 	}
 }
 
@@ -50,7 +47,7 @@ main {
 	#carousel {
 		position: relative;
 		overflow-x: hidden;
-		// .active { margin-left: 50%; };
+
 		.container {
 			@include carousel();
 			
@@ -107,7 +104,7 @@ main {
  
 		max-width: $max-w; margin: auto;
 		text-align: center;
-		h3 { max-width: 600px; margin: auto; padding: $pad*3 }
+		h3 { max-width: 600px; margin: auto; padding: $pad*3; text-transform: uppercase;}
 		article { margin: 100px; }
 		.fa-chart-line { font-size: 3em; color: $bg-col;  }
 		
@@ -115,6 +112,8 @@ main {
 			overflow-x: hidden;
 			margin-bottom: 100px;
 			margin: 0;
+
+			h3 { text-transform: none; color: $bg-col; }
 
 			.feature-nav { 
 				display: flex; justify-content: space-between;
@@ -153,85 +152,82 @@ main {
 	}
 }
 
-@media screen and (max-width: 1200px) {
-	header {
-		#logo {	
-			letter-spacing: 0; 	
-			h3 { display: none; }
+#modal_login {
+	display: none;
+	justify-content: center; align-items: center; // if display: flex;
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+	background: rgba(0,0,0,.5);
+	
+	.modal-block {
+		position: relative;
+		display: flex; flex-direction: column;
+		justify-content: center;
+		background: $rvr-col;
+		width: 400px;
+	}
+
+	#xBtn {
+		position: absolute;
+		right: 15px; top: 15px;
+		font-size: 1.6em;
+		cursor: pointer;
+	}
+	
+	.user-data {
+		margin-top: 25px;
+		display: flex; flex-direction: column; align-items: center;
+
+		.user-pic {
+			font-size: 5em;
 		}
 
-		#nav { 
-			display: none;
-			position: absolute; z-index: 1; right: -100%; margin: auto 0;
-			top: 0; 
-			height: 100%; width: 300px;
-			background-color: rgba(75,73,82,0.95);
-			transition: right 0.25s;
+		.user-name {
+			text-transform: uppercase;
+			color: $lg-col;
+			margin: $pad;
+		}
+	}
 
-			ul { 
-				display: flex; flex-direction: column; justify-content: space-around;
-				padding: 0 $pad*3;
 
-				li {}
-				a { 
-					display: inline-block; 
-					@include clear-anim();
-					color: $rvr-col; font-weight: bold;
-					padding: $pad*2 0;
-					margin-top: $pad;
-					width: 100%;
-					border-bottom: 1px solid $rvr-col; border-radius: 0;
-				}
-			}
+	form {
+		margin-bottom: 25px;
+		display: flex; justify-content: center; flex-direction: column;
 
-			#xBtn {
-				display: flex;
-				color: $rvr-col; 
-				justify-content: flex-end; margin: $pad*2;
-				width: auto;
-
-			}
-
+		input {
+			padding: $pad; margin: $pad auto;
+			width: 200px;
 		}
 
-		.show-menu { display: block !important; }
-		
-		#navIcon  { display: inline-block; }
-
-		#login {
-			span { display: none; }
-			i { display: inline-block; border: 4px solid silver; border-radius: 50%; padding: $pad; }
+		[type='submit'] {
+			border: 1px solid black;
+			background: $bg-sec-col;
+			font-weight: bold;
+			font-size: 1.05em; color: $rvr-col;
+			cursor: pointer; 
+			&:hover { transition: all 0.25s; background: lighten($bg-sec-col, 5%); }
 		}
+	}
 
-		i { font-size: 1.4em; cursor: pointer; color: silver; }
+	#logout, [type='submit'] {
+		width: 200px;
+
+		padding: $pad;
+		border: 1px solid black;
+		background: $bg-sec-col;
+		font-weight: bold;
+		font-size: 1.05em; color: $rvr-col; text-transform: uppercase;
+		cursor: pointer; 
+		&:hover { transition: all 0.25s; background: lighten($bg-sec-col, 5%); }
+	}
+
+	#logout { 
+		display: none;
+		margin: 25px auto;
+		// background: crimson;
+		// &:hover { background: lighten(crimson, 5%); }
 	}
 }
 
-@media screen and (max-width: 900px) {
-	main {
-		#carousel { 
-			.container >div { padding: $pad*5 0 $pad*5 0; }
-		}
-
-		#work {
-			article { margin: 50px 0; }
-			
-			.feature {
-				margin: 50px 0; 
-
-				.feature-nav { 
-					flex-direction: column; align-items: flex-start; 
-					> div {   
-						&:nth-child(1) { padding-left: 10%; }
-						&:nth-child(2) { padding-left: 30%; }
-						&:nth-child(3) { padding-left: 50%; }
-					}
-				}
-
-				.feature-describe {
-					> div { flex-direction: column; }
-				}
-			}
-		}
-	}
-}
+@import 'mobile';

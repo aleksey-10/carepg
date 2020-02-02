@@ -46,7 +46,6 @@ let carousel = new Carousel(carouselContainer);
 
 carouselContainer.querySelector('.arw').addEventListener( 'click', carousel );
 
-
 // 3. add carousel for block "work" from Carousel.js
 
 let work = document.querySelector('#work'), 

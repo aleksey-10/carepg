@@ -18,12 +18,16 @@ a {
   display: none !important; }
 
 article h3 {
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 10px; }
 
 article p {
   color: #666666;
   padding: 10px; }
+
+.user-pic {
+  color: silver;
+  cursor: pointer; }
 
 header {
   display: -webkit-box;
@@ -93,41 +97,11 @@ header {
     display: none; }
   header #navIcon {
     display: none; }
-  header #login span {
-    background: #ffb31c;
-    position: relative;
-    z-index: 0;
-    padding: 10px 40px 10px 40px;
+  header .btn {
+    font-size: 1.7em;
+    font-weight: bold;
     cursor: pointer;
-    color: white;
-    border-radius: 30px; }
-    header #login span:before {
-      visibility: hidden;
-      content: '';
-      opacity: 0.5;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      height: 100%;
-      margin: 0;
-      z-index: 0;
-      background-color: transparent;
-      -webkit-box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8);
-      box-shadow: 0px 0px 40px 14px rgba(255, 255, 255, 0.8); }
-    header #login span:hover {
-      background: #ffb31c;
-      color: white; }
-      header #login span:hover:before {
-        visibility: visible;
-        margin-left: 100%;
-        -webkit-transition: ease all 0.5s;
-        -o-transition: ease all 0.5s;
-        transition: ease all 0.5s; }
-  header #login i {
-    display: none; }
+    color: silver; }
 
 main #carousel {
   position: relative;
@@ -245,7 +219,8 @@ main #work {
   main #work h3 {
     max-width: 600px;
     margin: auto;
-    padding: 30px; }
+    padding: 30px;
+    text-transform: uppercase; }
   main #work article {
     margin: 100px; }
   main #work .fa-chart-line {
@@ -255,6 +230,9 @@ main #work {
     overflow-x: hidden;
     margin-bottom: 100px;
     margin: 0; }
+    main #work .feature h3 {
+      text-transform: none;
+      color: #ffb31c; }
     main #work .feature .feature-nav {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -303,19 +281,121 @@ main #work {
         max-width: 600px;
         text-align: justify; }
 
+#modal_login {
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5); }
+  #modal_login .modal-block {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: white;
+    width: 400px; }
+  #modal_login #xBtn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.6em;
+    cursor: pointer; }
+  #modal_login .user-data {
+    margin-top: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #modal_login .user-data .user-pic {
+      font-size: 5em; }
+    #modal_login .user-data .user-name {
+      text-transform: uppercase;
+      color: #666666;
+      margin: 10px; }
+  #modal_login form {
+    margin-bottom: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    #modal_login form input {
+      padding: 10px;
+      margin: 10px auto;
+      width: 200px; }
+    #modal_login form [type='submit'] {
+      border: 1px solid black;
+      background: #99DDFF;
+      font-weight: bold;
+      font-size: 1.05em;
+      color: white;
+      cursor: pointer; }
+      #modal_login form [type='submit']:hover {
+        -webkit-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+        background: #b3e6ff; }
+  #modal_login #logout, #modal_login [type='submit'] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    background: #99DDFF;
+    font-weight: bold;
+    font-size: 1.05em;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer; }
+    #modal_login #logout:hover, #modal_login [type='submit']:hover {
+      -webkit-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s;
+      background: #b3e6ff; }
+  #modal_login #logout {
+    display: none;
+    margin: 25px auto; }
+
 @media screen and (max-width: 1200px) {
   header #logo {
-    letter-spacing: 0; }
+    font-size: 1.2em; }
     header #logo h3 {
       display: none; }
+    header #logo i {
+      padding: 0; }
   header #nav {
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     right: -100%;
     margin: auto 0;
     top: 0;
-    height: 100%;
+    min-height: 100vh;
     width: 300px;
     background-color: rgba(75, 73, 82, 0.95);
     -webkit-transition: right 0.25s;
@@ -331,7 +411,7 @@ main #work {
       flex-direction: column;
       -ms-flex-pack: distribute;
       justify-content: space-around;
-      padding: 0 30px; }
+      padding: 0 30px 30px 30px; }
       header #nav ul a {
         display: inline-block;
         text-decoration: none;
@@ -365,18 +445,7 @@ main #work {
   header .show-menu {
     display: block !important; }
   header #navIcon {
-    display: inline-block; }
-  header #login span {
-    display: none; }
-  header #login i {
-    display: inline-block;
-    border: 4px solid silver;
-    border-radius: 50%;
-    padding: 10px; }
-  header i {
-    font-size: 1.4em;
-    cursor: pointer;
-    color: silver; } }
+    display: inline-block; } }
 
 @media screen and (max-width: 900px) {
   main #carousel .container > div {
@@ -385,22 +454,28 @@ main #work {
     margin: 50px 0; }
   main #work .feature {
     margin: 50px 0; }
-    main #work .feature .feature-nav {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      align-items: flex-start; }
-      main #work .feature .feature-nav > div:nth-child(1) {
-        padding-left: 10%; }
-      main #work .feature .feature-nav > div:nth-child(2) {
-        padding-left: 30%; }
-      main #work .feature .feature-nav > div:nth-child(3) {
-        padding-left: 50%; }
     main #work .feature .feature-describe > div {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; } }
+
+@media screen and (max-width: 600px) {
+  main #work .feature .feature-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+    main #work .feature .feature-nav > div:nth-child(1) {
+      padding-left: 10%; }
+    main #work .feature .feature-nav > div:nth-child(2) {
+      padding-left: 30%; }
+    main #work .feature .feature-nav > div:nth-child(3) {
+      padding-left: 50%; } }
+
+@media screen and (max-width: 400px) {
+  #modal_login .modal-block {
+    width: 100%; } }

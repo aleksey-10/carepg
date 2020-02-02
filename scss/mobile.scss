@@ -1,0 +1,91 @@
+@media screen and (max-width: 1200px) {
+	header {
+		#logo {		
+			h3 { display: none; }
+			i { padding: 0; }
+			font-size: 1.2em;
+		}
+
+		#nav { 
+			display: none;
+			position: fixed; z-index: 1; right: -100%; margin: auto 0;
+			top: 0; 
+			min-height: 100vh; width: 300px;
+			background-color: rgba(75,73,82,0.95);
+			transition: right 0.25s;
+
+			ul { 
+				display: flex; flex-direction: column; justify-content: space-around;
+				padding: 0 $pad*3 $pad*3 $pad*3;
+
+				a { 
+					display: inline-block; 
+					@include clear-anim();
+					color: $rvr-col; font-weight: bold;
+					padding: $pad*2 0;
+					margin-top: $pad;
+					width: 100%;
+					border-bottom: 1px solid $rvr-col; border-radius: 0;
+				}
+			}
+
+			#xBtn {
+				display: flex;
+				color: $rvr-col; 
+				justify-content: flex-end; margin: $pad*2;
+				width: auto;
+
+			}
+
+		}
+
+		.show-menu { display: block !important; }
+		
+		#navIcon  { display: inline-block; }
+	}
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		#carousel { 
+			.container >div { padding: $pad*5 0 $pad*5 0; }
+		}
+
+		#work {
+			article { margin: 50px 0; }
+
+			.feature {
+				margin: 50px 0; 
+
+				.feature-describe {
+					> div { flex-direction: column; }
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		#work {
+			.feature {
+				.feature-nav { 
+					flex-direction: column; align-items: flex-start; 
+					> div {   
+						&:nth-child(1) { padding-left: 10%; }
+						&:nth-child(2) { padding-left: 30%; }
+						&:nth-child(3) { padding-left: 50%; }
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#modal_login {
+		.modal-block {
+			width: 100%;
+		}
+	}
+}
