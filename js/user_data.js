@@ -39,7 +39,7 @@ function formToggleDisplay(container) {
 }
 
 function setData(container) {
-	if (!localStorage.length) return;
+	if (localStorage.getItem('name') === null) return;
 		
 	setUserData( localStorage.getItem('name') );
 
