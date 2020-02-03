@@ -2,13 +2,13 @@
 
 window.onload = () => setData(modal_login);
 
+let toggleForm = formToggleDisplay(modal_login);
+
 modal_login.addEventListener( 'click', event => {
-	if (event.target == modal_login) modal_login.style.display = 'none';
+	if (event.target == modal_login) toggleForm();
 } );
 
-modal_login.querySelector('#xBtn').onclick = () => modal_login.style.display = 'none';
-
-let toggleForm = formToggleDisplay(modal_login);
+modal_login.querySelector('#xBtn').onclick = () => toggleForm();
 
 login.addEventListener('click', function(event){
 	if (!event.target.classList.contains('btn')) return;
